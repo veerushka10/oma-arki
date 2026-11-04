@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f1ea">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Oma arki">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Oma arki</title>
+</head>
+<body>
+  <header class="top">
+    <div><span class="eyebrow">Yksi asia kerrallaan</span><h1>Oma arki</h1></div>
+    <button class="icon-button" id="settings-button" aria-label="Asetukset">⚙</button>
+  </header>
+  <main id="app"></main>
+  <nav class="tabs" aria-label="Päänavigaatio">
+    <button data-tab="today">☀<span>Tänään</span></button>
+    <button data-tab="meals">🍽<span>Ruoat</span></button>
+    <button data-tab="shopping">🛒<span>Ostokset</span></button>
+    <button data-tab="tasks">✓<span>Tehtävät</span></button>
+  </nav>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>
