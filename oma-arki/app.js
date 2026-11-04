@@ -1,9 +1,10 @@
 "use strict";
 
 const KEY = "oma-arki-v1";
+const DEFAULT_RECIPE_BUNDLE = "arkireseptikansio-v1";
 const weekdays = ["ma", "ti", "ke", "to", "pe", "la", "su"];
 const weekdayNames = ["Maanantai", "Tiistai", "Keskiviikko", "Torstai", "Perjantai", "Lauantai", "Sunnuntai"];
-const emptyData = () => ({ version: 1, recipes: [], meals: {}, shopping: [], tasks: [], completed: {} });
+const emptyData = () => ({ version: 1, recipes: [], meals: {}, shopping: [], tasks: [], completed: {}, defaultBundles: [] });
 const app = document.querySelector("#app");
 let data;
 let tab = "today";
@@ -11,6 +12,8 @@ let selectedDate = dateKey(new Date());
 let weekStart = monday(new Date());
 let month = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
 let recipeCategory = "";
+let defaultRecipeError = false;
+let defaultRecipeLoading = false;
 let toastTimer;
 
 function esc(value) {
@@ -51,7 +54,8 @@ function isValidData(value) {
     isObject(value.meals) && Object.entries(value.meals).every(([date, recipeId]) => isDate(date) && isString(recipeId)) &&
     Array.isArray(value.shopping) && value.shopping.every(i => isObject(i) && isString(i.id) && isString(i.text) && typeof i.checked === "boolean") &&
     Array.isArray(value.tasks) && value.tasks.every(t => isObject(t) && isString(t.id) && isString(t.name) && ((t.type === "once" && isDate(t.date)) || (t.type === "weekly" && Number.isInteger(t.weekday) && t.weekday >= 0 && t.weekday <= 6))) &&
-    isObject(value.completed) && Object.entries(value.completed).every(([key, done]) => isString(key) && typeof done === "boolean");
+    isObject(value.completed) && Object.entries(value.completed).every(([key, done]) => isString(key) && typeof done === "boolean") &&
+    (value.defaultBundles === undefined || (Array.isArray(value.defaultBundles) && value.defaultBundles.every(isString)));
 }
 function save() {
   try { localStorage.setItem(KEY, JSON.stringify(data)); return true; }
@@ -149,7 +153,8 @@ function render() {
     button.classList.toggle("active", button.dataset.tab === tab);
     button.setAttribute("aria-current", button.dataset.tab === tab ? "page" : "false");
   });
-  app.innerHTML = ({ today: renderToday, meals: renderMeals, shopping: renderShopping, tasks: renderTasks })[tab]();
+  app.innerHTML = (defaultRecipeError ? `<section class="card"><strong>Valmiita reseptejä ei saatu ladattua.</strong><p class="hint">Tarkista verkkoyhteys ja yritä uudelleen. Omat tietosi ovat tallessa.</p><button class="secondary primary" data-retry-default>Yritä uudelleen</button></section>` : "") +
+    ({ today: renderToday, meals: renderMeals, shopping: renderShopping, tasks: renderTasks })[tab]();
 }
 function recipeDialog(recipe) {
   const editing = Boolean(recipe);
@@ -188,6 +193,51 @@ function viewRecipe(recipe) {
     <h3>Ainekset</h3><p style="white-space:pre-wrap">${esc(recipe.ingredients || "Ei tallennettuja aineksia.")}</p>${recipe.notes ? `<h3>Ohje tai muistiinpanot</h3><p style="white-space:pre-wrap">${esc(recipe.notes)}</p>` : ""}
     <div class="dialog-actions"><button class="primary" data-edit>Muokkaa</button><button class="secondary primary" data-close>Sulje</button></div>`, dialog => dialog.querySelector("[data-edit]").addEventListener("click", () => { dialog.close(); recipeDialog(recipe); }));
 }
+function validateRecipeBundle(bundle) {
+  if (!bundle || bundle.type !== "oma-arki-recipes" || bundle.version !== 1 || !Array.isArray(bundle.recipes) ||
+      !isValidData({ ...emptyData(), recipes: bundle.recipes }) ||
+      bundle.recipes.some(recipe => !recipe.importId || !recipe.name.trim() || [recipe.url, ...(recipe.links || []).map(link => link.url)].some(url => url && !linkFor(url)))) {
+    throw new Error("Tiedosto ei ole kelvollinen Oma arki -reseptitiedosto.");
+  }
+}
+function missingRecipes(bundle) {
+  const known = new Set(data.recipes.map(recipe => recipe.importId).filter(Boolean));
+  const additions = [];
+  for (const recipe of bundle.recipes) {
+    if (!known.has(recipe.importId)) {
+      additions.push({ ...recipe, id: id() });
+      known.add(recipe.importId);
+    }
+  }
+  return additions;
+}
+async function loadDefaultRecipes() {
+  if (defaultRecipeLoading || (data.defaultBundles || []).includes(DEFAULT_RECIPE_BUNDLE)) return;
+  defaultRecipeLoading = true;
+  try {
+    const response = await fetch("./arkireseptit.json");
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const bundle = await response.json();
+    validateRecipeBundle(bundle);
+    const previousRecipes = data.recipes;
+    const previousBundles = data.defaultBundles;
+    const additions = missingRecipes(bundle);
+    data.recipes = [...data.recipes, ...additions];
+    data.defaultBundles = [...(data.defaultBundles || []), DEFAULT_RECIPE_BUNDLE];
+    if (!save()) {
+      data.recipes = previousRecipes;
+      data.defaultBundles = previousBundles;
+      throw new Error("Reseptien tallennus epäonnistui.");
+    }
+    defaultRecipeError = false;
+    render();
+    if (additions.length) showToast(`${additions.length} valmista reseptiä lisätty`);
+  } catch (error) {
+    console.error("Valmiita reseptejä ei voitu ladata:", error);
+    defaultRecipeError = true;
+    render();
+  } finally { defaultRecipeLoading = false; }
+}
 function importRecipesDialog() {
   modal(`<h2>Tuo reseptejä</h2><p>Valitse Oma arkea varten tehty reseptien JSON-tiedosto. Reseptit lisätään nykyisten tietojesi rinnalle; aiempia reseptejä, ostoksia tai tehtäviä ei poisteta.</p>
     <label for="recipes-file">Reseptitiedosto</label><input type="file" id="recipes-file" accept=".json,application/json"><p class="hint">Word-tiedosto pitää ensin muuntaa Oma arjen reseptitiedostoksi. Jo tuotuja reseptejä ei lisätä uudelleen.</p><button class="secondary primary" data-close>Sulje</button>`, dialog => {
@@ -197,19 +247,8 @@ function importRecipesDialog() {
       try {
         if (file.size > 5 * 1024 * 1024) throw new Error("Tiedosto on liian suuri.");
         const bundle = JSON.parse(await file.text());
-        if (!bundle || bundle.type !== "oma-arki-recipes" || bundle.version !== 1 || !Array.isArray(bundle.recipes) ||
-            !isValidData({ ...emptyData(), recipes: bundle.recipes }) ||
-            bundle.recipes.some(recipe => !recipe.importId || !recipe.name.trim() || [recipe.url, ...(recipe.links || []).map(link => link.url)].some(url => url && !linkFor(url)))) {
-          throw new Error("Tiedosto ei ole kelvollinen Oma arki -reseptitiedosto.");
-        }
-        const known = new Set(data.recipes.map(recipe => recipe.importId).filter(Boolean));
-        const additions = [];
-        for (const recipe of bundle.recipes) {
-          if (!known.has(recipe.importId)) {
-            additions.push({ ...recipe, id: id() });
-            known.add(recipe.importId);
-          }
-        }
+        validateRecipeBundle(bundle);
+        const additions = missingRecipes(bundle);
         if (!additions.length) { alert("Kaikki tämän tiedoston reseptit on jo tuotu."); return; }
         const previous = data.recipes;
         data.recipes = [...data.recipes, ...additions];
@@ -306,7 +345,7 @@ app.addEventListener("change", event => {
 app.addEventListener("submit", event => {
   if (event.target.id !== "shopping-form") return;
   event.preventDefault();
-  const text = event.target.elements.item.value.trim();
+  const text = event.target.elements.namedItem("item").value.trim();
   if (!text) { alert("Kirjoita lisättävä ostos."); return; }
   data.shopping.push({ id: id(), text, checked: false }); saveRender("Lisätty ostoslistaan");
 });
@@ -314,7 +353,8 @@ app.addEventListener("click", event => {
   const button = event.target.closest("button");
   if (!button) return;
   const a = button.dataset;
-  if (a.go) { tab = a.go; render(); }
+  if ("retryDefault" in a) { defaultRecipeError = false; render(); loadDefaultRecipes(); }
+  else if (a.go) { tab = a.go; render(); }
   else if ("addRecipe" in a) recipeDialog();
   else if ("importRecipes" in a) importRecipesDialog();
   else if (a.editRecipe) { const recipe = data.recipes.find(r => r.id === a.editRecipe); if (recipe) recipeDialog(recipe); }
@@ -347,6 +387,7 @@ window.addEventListener("storage", event => {
   catch { alert("Toisen näkymän tietoja ei voitu lukea."); }
 });
 render();
+loadDefaultRecipes();
 if ("serviceWorker" in navigator && window.isSecureContext) {
   navigator.serviceWorker.register("./sw.js").catch(() => showToast("Offline-käyttöä ei voitu ottaa käyttöön. Tarkista yhteys ja avaa sovellus uudelleen."));
 }

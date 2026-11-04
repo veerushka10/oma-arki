@@ -1,0 +1,1422 @@
+{
+  "type": "oma-arki-recipes",
+  "version": 1,
+  "recipes": [
+    {
+      "id": "word-57ad83d053077fb8b7a9",
+      "importId": "arkireseptikansio-57ad83d053077fb8b7a9",
+      "name": "Pakasteesta: lihapullat/vihapullat, uunikasvikset ja perunat",
+      "category": "Super helppo",
+      "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/vihapullat-ja-uunikasvikset",
+      "links": [
+        {
+          "label": "vihapullat",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/vihapullat-ja-uunikasvikset"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-9b19b81f7443b713da1e",
+      "importId": "arkireseptikansio-9b19b81f7443b713da1e",
+      "name": "Pakastepizza (esim Pizza Backen)",
+      "category": "Super helppo",
+      "url": "https://www.s-kaupat.fi/tuote/pizza-backen-mozzarella-460g-pakastepizza/6429810891044",
+      "links": [
+        {
+          "label": "Pizza Backen",
+          "url": "https://www.s-kaupat.fi/tuote/pizza-backen-mozzarella-460g-pakastepizza/6429810891044"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-ad678bc8e4b73b3e1bf3",
+      "importId": "arkireseptikansio-ad678bc8e4b73b3e1bf3",
+      "name": "Hampparit",
+      "category": "Super helppo",
+      "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/hampparit",
+      "links": [
+        {
+          "label": "Hampparit",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/hampparit"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-fb062e0ac1bc24c8a11d",
+      "importId": "arkireseptikansio-fb062e0ac1bc24c8a11d",
+      "name": "Hodarit",
+      "category": "Super helppo",
+      "url": "",
+      "links": [],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-242bb269eab81ae1ce8d",
+      "importId": "arkireseptikansio-242bb269eab81ae1ce8d",
+      "name": "Tomaatti-linssi-vuohenjuustokeitto",
+      "category": "Super helppo",
+      "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/tomaatti-linssi-vuohenjuustokeitto",
+      "links": [
+        {
+          "label": "Tomaatti-linssi-vuohenjuustokeitto",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/tomaatti-linssi-vuohenjuustokeitto"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-e48154fc6691b226d967",
+      "importId": "arkireseptikansio-e48154fc6691b226d967",
+      "name": "Pinaattiletut",
+      "category": "Super helppo",
+      "url": "https://www.s-kaupat.fi/tuote/atria-pinaattiohukainen-400g/6407850056654",
+      "links": [
+        {
+          "label": "Pinaattiletut",
+          "url": "https://www.s-kaupat.fi/tuote/atria-pinaattiohukainen-400g/6407850056654"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-038638dc8c131123a753",
+      "importId": "arkireseptikansio-038638dc8c131123a753",
+      "name": "Lounassalaatti (pastan voi korvata keitetyllä perunalla)",
+      "category": "Super helppo",
+      "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/8-minuutin-raejuustosalaatti",
+      "links": [
+        {
+          "label": "Lounassalaatti",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/8-minuutin-raejuustosalaatti"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-5eb8554572fc8dbc5676",
+      "importId": "arkireseptikansio-5eb8554572fc8dbc5676",
+      "name": "Kasvissosekeitto (pakastekasviksilla)",
+      "category": "Super helppo",
+      "url": "https://www.k-ruoka.fi/reseptit/kasvissosekeitto",
+      "links": [
+        {
+          "label": "Kasvissosekeitto",
+          "url": "https://www.k-ruoka.fi/reseptit/kasvissosekeitto"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-0114fde5f82a80a00fb8",
+      "importId": "arkireseptikansio-0114fde5f82a80a00fb8",
+      "name": "Hernekeitto",
+      "category": "Super helppo",
+      "url": "https://www.s-kaupat.fi/tuote/jalostaja-perinteinen-hernekeitto-435-g/6409531659413",
+      "links": [
+        {
+          "label": "Hernekeitto",
+          "url": "https://www.s-kaupat.fi/tuote/jalostaja-perinteinen-hernekeitto-435-g/6409531659413"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-3f56a99fc9f1804a67d6",
+      "importId": "arkireseptikansio-3f56a99fc9f1804a67d6",
+      "name": "Pinaattikeitto",
+      "category": "Super helppo",
+      "url": "https://www.s-kaupat.fi/tuote/apetit-kotimainen-pinaattikeitto-pakaste-400g/6430104960780",
+      "links": [
+        {
+          "label": "Pinaattikeitto",
+          "url": "https://www.s-kaupat.fi/tuote/apetit-kotimainen-pinaattikeitto-pakaste-400g/6430104960780"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-87a197476bcb0b11b70d",
+      "importId": "arkireseptikansio-87a197476bcb0b11b70d",
+      "name": "Kalapuikot ja perunamuusi",
+      "category": "Super helppo",
+      "url": "https://www.s-kaupat.fi/tuote/frionor-kalapuikot-msc-250g-pakaste/7310500038773",
+      "links": [
+        {
+          "label": "Kalapuikot",
+          "url": "https://www.s-kaupat.fi/tuote/frionor-kalapuikot-msc-250g-pakaste/7310500038773"
+        },
+        {
+          "label": "perunamuusi",
+          "url": "https://www.s-kaupat.fi/tuote/apetit-perunamuusi-pakaste-350g/6430104926502"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-660a1f6c0b98da47ddae",
+      "importId": "arkireseptikansio-660a1f6c0b98da47ddae",
+      "name": "Vihreän hirviön lempipasta / tofu-herne-pinaattipasta",
+      "category": "Pasta",
+      "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/vihrean-hirvion-lempipastaa-tofu-herne-pinaattipasta",
+      "links": [
+        {
+          "label": "Vihreän hirviön lempipasta / tofu-herne-pinaattipasta",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/vihrean-hirvion-lempipastaa-tofu-herne-pinaattipasta"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-e2c78c2d412148fd80f7",
+      "importId": "arkireseptikansio-e2c78c2d412148fd80f7",
+      "name": "Linssi-pinaattipasta",
+      "category": "Pasta",
+      "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/linssi-pinaatti-pasta",
+      "links": [
+        {
+          "label": "Linssi-pinaattipasta",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/linssi-pinaatti-pasta"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-2a6ca551dd02a8269c4f",
+      "importId": "arkireseptikansio-2a6ca551dd02a8269c4f",
+      "name": "Marry me pasta (tofulla tai kanalla tai kanattomasti)",
+      "category": "Pasta",
+      "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/marry-me-tofu-pasta",
+      "links": [
+        {
+          "label": "Marry me pasta (tofulla",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/marry-me-tofu-pasta"
+        },
+        {
+          "label": "kanalla",
+          "url": "https://www.k-ruoka.fi/reseptit/marry-me--kanapasta"
+        },
+        {
+          "label": "kanattomasti",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/kanaton-marry-me-pasta"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-c38d6a43f7f39d0a5b3f",
+      "importId": "arkireseptikansio-c38d6a43f7f39d0a5b3f",
+      "name": "Pasta bolognese (linsseillä, soijalla tai lihalla)",
+      "category": "Pasta",
+      "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/pasta-bolognese-linsseilla",
+      "links": [
+        {
+          "label": "Pasta bolognese (linsseillä,",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/pasta-bolognese-linsseilla"
+        },
+        {
+          "label": "soijalla",
+          "url": "https://vegaanihaaste.fi/reseptit/soijabolognese/"
+        },
+        {
+          "label": "lihalla",
+          "url": "https://www.soppa365.fi/reseptit/liha-pastat-ja-risotot-kastikkeet-tahnat-ja-marinadit/maailman-paras-bolognese"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-e60f44b7a357a0445e45",
+      "importId": "arkireseptikansio-e60f44b7a357a0445e45",
+      "name": "Avokadopasta",
+      "category": "Pasta",
+      "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/avokadopasta-arkireseptina",
+      "links": [
+        {
+          "label": "Avokadopasta",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/avokadopasta-arkireseptina"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-8fa0a3368b1dd1cccdb7",
+      "importId": "arkireseptikansio-8fa0a3368b1dd1cccdb7",
+      "name": "Helppo tomaattipasta",
+      "category": "Pasta",
+      "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/helppo-tomaattipasta",
+      "links": [
+        {
+          "label": "Helppo tomaattipasta",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/helppo-tomaattipasta"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-bee9b5dd331cd0fa9477",
+      "importId": "arkireseptikansio-bee9b5dd331cd0fa9477",
+      "name": "Pestopasta",
+      "category": "Pasta",
+      "url": "https://www.soppa365.fi/reseptit/arjen-nopeat-pastat-ja-risotot/kermainen-pestopasta",
+      "links": [
+        {
+          "label": "Pestopasta",
+          "url": "https://www.soppa365.fi/reseptit/arjen-nopeat-pastat-ja-risotot/kermainen-pestopasta"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-c24247d91fb27406a59b",
+      "importId": "arkireseptikansio-c24247d91fb27406a59b",
+      "name": "Lihapullat tomaattikastikkeessa (valmislihapullilla)",
+      "category": "Pasta",
+      "url": "https://mutti-parma.com/fi/tomaattireseptit/lihapullat-tomaattikastikkeessa-2/",
+      "links": [
+        {
+          "label": "Lihapullat tomaattikastikkeessa",
+          "url": "https://mutti-parma.com/fi/tomaattireseptit/lihapullat-tomaattikastikkeessa-2/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-e78645719ca9f57b4e6e",
+      "importId": "arkireseptikansio-e78645719ca9f57b4e6e",
+      "name": "Katkarapupasta",
+      "category": "Pasta",
+      "url": "https://www.ruokajakoti.fi/Katkarapupasta",
+      "links": [
+        {
+          "label": "Katkarapupasta",
+          "url": "https://www.ruokajakoti.fi/Katkarapupasta"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-95b789f19d8a1e8a0d94",
+      "importId": "arkireseptikansio-95b789f19d8a1e8a0d94",
+      "name": "Pollo limonello / tofu limonello",
+      "category": "Pasta",
+      "url": "https://www.valio.fi/reseptit/pollo-limonello/",
+      "links": [
+        {
+          "label": "Pollo limonello",
+          "url": "https://www.valio.fi/reseptit/pollo-limonello/"
+        },
+        {
+          "label": "tofu limonello",
+          "url": "https://jalotofu.fi/reseptit/tofu-limonello-sitruunainen-kasvispasta/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-2301d140af55c93b8cf2",
+      "importId": "arkireseptikansio-2301d140af55c93b8cf2",
+      "name": "Lohipasta",
+      "category": "Pasta",
+      "url": "https://www.valio.fi/reseptit/helppo-lohipasta/",
+      "links": [
+        {
+          "label": "Lohipasta",
+          "url": "https://www.valio.fi/reseptit/helppo-lohipasta/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-7b125e410d42097570e6",
+      "importId": "arkireseptikansio-7b125e410d42097570e6",
+      "name": "Pestopasta kylmäsavutofulla",
+      "category": "Pasta",
+      "url": "https://jalotofu.fi/reseptit/pestopasta-kylmasavutofulla/",
+      "links": [
+        {
+          "label": "Pestopasta kylmäsavutofulla",
+          "url": "https://jalotofu.fi/reseptit/pestopasta-kylmasavutofulla/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-8f96fc04689ebec5c775",
+      "importId": "arkireseptikansio-8f96fc04689ebec5c775",
+      "name": "Tomaattinen tofupasta",
+      "category": "Pasta",
+      "url": "https://hannansoppa.com/tomaattinen-tofupasta/",
+      "links": [
+        {
+          "label": "Tomaattinen tofupasta",
+          "url": "https://hannansoppa.com/tomaattinen-tofupasta/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-391766e72eacde83bc35",
+      "importId": "arkireseptikansio-391766e72eacde83bc35",
+      "name": "Tortillat (tofulla, härkiksellä, lihalla tai kanalla)",
+      "category": "Texmex",
+      "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/crispy-texmex-tofu",
+      "links": [
+        {
+          "label": "tofulla",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/crispy-texmex-tofu"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-af8be8c2dfe2ef8830f8",
+      "importId": "arkireseptikansio-af8be8c2dfe2ef8830f8",
+      "name": "Helpot quesadillat (tai revityllä tofulla tai lihalla tai kanalla)",
+      "category": "Texmex",
+      "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/tofu-quesadillat",
+      "links": [
+        {
+          "label": "Helpot quesadillat",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/tofu-quesadillat"
+        },
+        {
+          "label": "revityllä tofulla",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/crispy-texmex-tofu"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-4e8fc13298036ce07934",
+      "importId": "arkireseptikansio-4e8fc13298036ce07934",
+      "name": "Korealaiset tacot",
+      "category": "Texmex",
+      "url": "https://www.hs.fi/ruoka/reseptit/art-2000009010236.html",
+      "links": [
+        {
+          "label": "Korealaiset tacot",
+          "url": "https://www.hs.fi/ruoka/reseptit/art-2000009010236.html"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-93dac8ba6a4bdd67bd12",
+      "importId": "arkireseptikansio-93dac8ba6a4bdd67bd12",
+      "name": "Aasialaiset edamame-tacot",
+      "category": "Texmex",
+      "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/aasialaiset-edamame-tacot",
+      "links": [
+        {
+          "label": "Aasialaiset edamame-tacot",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/aasialaiset-edamame-tacot"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-18694bf569bb8b752c2b",
+      "importId": "arkireseptikansio-18694bf569bb8b752c2b",
+      "name": "Tacot (tofulla, lihalla tai kanalla)",
+      "category": "Texmex",
+      "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/crispy-texmex-tofu",
+      "links": [
+        {
+          "label": "tofulla",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/crispy-texmex-tofu"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-37ad4e329b4b7e5cebf8",
+      "importId": "arkireseptikansio-37ad4e329b4b7e5cebf8",
+      "name": "Texmex-salaatti (tai tofulla)",
+      "category": "Texmex",
+      "url": "https://www.k-ruoka.fi/reseptit/texmex-salaatti",
+      "links": [
+        {
+          "label": "Texmex-salaatti",
+          "url": "https://www.k-ruoka.fi/reseptit/texmex-salaatti"
+        },
+        {
+          "label": "tofulla",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/crispy-texmex-tofu"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-b16c0632dd4e35dd95ba",
+      "importId": "arkireseptikansio-b16c0632dd4e35dd95ba",
+      "name": "Nacho-uunipelti (tai tofulla)",
+      "category": "Texmex",
+      "url": "https://www.k-ruoka.fi/reseptit/nachopelti",
+      "links": [
+        {
+          "label": "Nacho-uunipelti",
+          "url": "https://www.k-ruoka.fi/reseptit/nachopelti"
+        },
+        {
+          "label": "tofulla",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/tofu-nachopelti"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-14ee9deed1e833d39aae",
+      "importId": "arkireseptikansio-14ee9deed1e833d39aae",
+      "name": "Enchilladat / vege-enchilladat",
+      "category": "Texmex",
+      "url": "https://www.k-ruoka.fi/reseptit/enchiladat",
+      "links": [
+        {
+          "label": "Enchilladat",
+          "url": "https://www.k-ruoka.fi/reseptit/enchiladat"
+        },
+        {
+          "label": "vege-enchilladat",
+          "url": "https://www.valio.fi/reseptit/vegaaniset-enchiladat/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-3fe8a8256a4a9d8a91b8",
+      "importId": "arkireseptikansio-3fe8a8256a4a9d8a91b8",
+      "name": "Chili con carne / sin carne",
+      "category": "Texmex",
+      "url": "https://www.k-ruoka.fi/reseptit/chili-con-carne",
+      "links": [
+        {
+          "label": "Chili con carne",
+          "url": "https://www.k-ruoka.fi/reseptit/chili-con-carne"
+        },
+        {
+          "label": "sin carne",
+          "url": "https://www.k-ruoka.fi/reseptit/chili-sin-carne"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-e339e5c603c9c4192c50",
+      "importId": "arkireseptikansio-e339e5c603c9c4192c50",
+      "name": "Meksikonpata",
+      "category": "Texmex",
+      "url": "https://www.k-ruoka.fi/reseptit/helppo-meksikonpata",
+      "links": [
+        {
+          "label": "Meksikonpata",
+          "url": "https://www.k-ruoka.fi/reseptit/helppo-meksikonpata"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-b76a22381e8f0c84974e",
+      "importId": "arkireseptikansio-b76a22381e8f0c84974e",
+      "name": "Tortillavuoka",
+      "category": "Texmex",
+      "url": "https://www.instagram.com/reel/C-5XjpbN8TP/",
+      "links": [
+        {
+          "label": "Tortillavuoka",
+          "url": "https://www.instagram.com/reel/C-5XjpbN8TP/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-b148940c8e2971ce1e84",
+      "importId": "arkireseptikansio-b148940c8e2971ce1e84",
+      "name": "Taco-perunavuoka",
+      "category": "Texmex",
+      "url": "https://www.instagram.com/reel/C3cKet3NTn_/?hl=fi",
+      "links": [
+        {
+          "label": "Taco-perunavuoka",
+          "url": "https://www.instagram.com/reel/C3cKet3NTn_/?hl=fi"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-87c6fd9a9490a671f8c8",
+      "importId": "arkireseptikansio-87c6fd9a9490a671f8c8",
+      "name": "Risotto (parsan voi korvata uuniparsakaalilla tai rouhennetuilla saksanpähkinöillä tai paistetuilla sienillä)",
+      "category": "Riisi / Wok",
+      "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/parsa-vuohenjuusto-risotto",
+      "links": [
+        {
+          "label": "Risotto",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/parsa-vuohenjuusto-risotto"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-ba39a0e0af721172f2d0",
+      "importId": "arkireseptikansio-ba39a0e0af721172f2d0",
+      "name": "Tofuwokki / kanawokki",
+      "category": "Riisi / Wok",
+      "url": "https://jalotofu.fi/reseptit/tofu-kasviswokki-ihana-kastike/",
+      "links": [
+        {
+          "label": "Tofuwokki",
+          "url": "https://jalotofu.fi/reseptit/tofu-kasviswokki-ihana-kastike/"
+        },
+        {
+          "label": "kanawokki",
+          "url": "https://yhteishyva.fi/reseptit/nopea-kanawokki/xW1A8xTotVaT8QDqqErER"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-3b96257b20de8ba6486c",
+      "importId": "arkireseptikansio-3b96257b20de8ba6486c",
+      "name": "Pokebowl (tofu tai kala)",
+      "category": "Riisi / Wok",
+      "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/crispy-tofu-poke-bowl",
+      "links": [
+        {
+          "label": "tofu",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/crispy-tofu-poke-bowl"
+        },
+        {
+          "label": "kala",
+          "url": "https://kotiliesi.fi/resepti/poke-bowl/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-9f2dcc57972093067919",
+      "importId": "arkireseptikansio-9f2dcc57972093067919",
+      "name": "Uunilohi riisillä",
+      "category": "Riisi / Wok",
+      "url": "https://www.kotikokki.net/reseptit/nayta/177668/UUNILOHI%20Riisipedillä/",
+      "links": [
+        {
+          "label": "Uunilohi riisillä",
+          "url": "https://www.kotikokki.net/reseptit/nayta/177668/UUNILOHI%20Riisipedillä/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-56324f72bc7f177f1d5d",
+      "importId": "arkireseptikansio-56324f72bc7f177f1d5d",
+      "name": "Teriyakikanaa / tofua  / lohta riisillä",
+      "category": "Riisi / Wok",
+      "url": "https://kotiliesi.fi/resepti/teriyakikana/",
+      "links": [
+        {
+          "label": "Teriyakikanaa",
+          "url": "https://kotiliesi.fi/resepti/teriyakikana/"
+        },
+        {
+          "label": "tofua",
+          "url": "https://jalotofu.fi/reseptit/teriyaki-tofu-parsakaali-riisi/"
+        },
+        {
+          "label": "lohta",
+          "url": "https://www.soppa365.fi/reseptit/kala-arjen-nopeat/lohta-ja-teriyakikastiketta"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-b9cb88470046a3113662",
+      "importId": "arkireseptikansio-b9cb88470046a3113662",
+      "name": "Kanapullia / vihapullia, currykastiketta ja riisiä",
+      "category": "Riisi / Wok",
+      "url": "https://www.kotikokki.net/reseptit/nayta/253384/Currykastike%20broileripyöryköille/",
+      "links": [
+        {
+          "label": "currykastiketta",
+          "url": "https://www.kotikokki.net/reseptit/nayta/253384/Currykastike%20broileripyöryköille/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-2d7f0a75aa8ef05cb244",
+      "importId": "arkireseptikansio-2d7f0a75aa8ef05cb244",
+      "name": "Täytetyt paprikat",
+      "category": "Riisi / Wok",
+      "url": "https://www.valio.fi/reseptit/taytetyt-paprikat/",
+      "links": [
+        {
+          "label": "Täytetyt paprikat",
+          "url": "https://www.valio.fi/reseptit/taytetyt-paprikat/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-6d8ef3a459ca89ef1db8",
+      "importId": "arkireseptikansio-6d8ef3a459ca89ef1db8",
+      "name": "Pad Thai",
+      "category": "Riisi / Wok",
+      "url": "https://www.k-ruoka.fi/reseptit/pad-thai-eli-paistetut-nuudelit",
+      "links": [
+        {
+          "label": "Pad Thai",
+          "url": "https://www.k-ruoka.fi/reseptit/pad-thai-eli-paistetut-nuudelit"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-481359aeaa6e6a2b9928",
+      "importId": "arkireseptikansio-481359aeaa6e6a2b9928",
+      "name": "Sticky tofu / Sticky kana",
+      "category": "Riisi / Wok",
+      "url": "https://kotijakeittio.fi/artikkeli/sticky-chicken-eli-aasialainen-tahmakana-on-mausteinen-uuniherkku-6.165.163072.3f100f1c9e",
+      "links": [
+        {
+          "label": "Sticky kana",
+          "url": "https://kotijakeittio.fi/artikkeli/sticky-chicken-eli-aasialainen-tahmakana-on-mausteinen-uuniherkku-6.165.163072.3f100f1c9e"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-56e9fa3c0bf657745b55",
+      "importId": "arkireseptikansio-56e9fa3c0bf657745b55",
+      "name": "Butter chicken / Butter tofu",
+      "category": "Riisi / Wok",
+      "url": "https://www.valio.fi/reseptit/butter-chicken-eli-kanaa-tomaatti-voikastikkeessa/",
+      "links": [
+        {
+          "label": "Butter chicken",
+          "url": "https://www.valio.fi/reseptit/butter-chicken-eli-kanaa-tomaatti-voikastikkeessa/"
+        },
+        {
+          "label": "Butter tofu",
+          "url": "https://www.k-ruoka.fi/reseptit/butter-tofu"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-af28a944ea6b107cefe1",
+      "importId": "arkireseptikansio-af28a944ea6b107cefe1",
+      "name": "Aasialainen nuudelisalaatti",
+      "category": "Riisi / Wok",
+      "url": "https://liemessa.fi/2017/04/aasialainen-nuudelisalaatti/",
+      "links": [
+        {
+          "label": "Aasialainen nuudelisalaatti",
+          "url": "https://liemessa.fi/2017/04/aasialainen-nuudelisalaatti/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-e97e89a791bb23f161b0",
+      "importId": "arkireseptikansio-e97e89a791bb23f161b0",
+      "name": "Sushipalat vuoassa",
+      "category": "Riisi / Wok",
+      "url": "https://www.instagram.com/reel/DNNubH8NfOZ/",
+      "links": [
+        {
+          "label": "Sushipalat vuoassa",
+          "url": "https://www.instagram.com/reel/DNNubH8NfOZ/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-e25f472b59a54bd9dc4f",
+      "importId": "arkireseptikansio-e25f472b59a54bd9dc4f",
+      "name": "Makaronilaatikko",
+      "category": "Laatikko",
+      "url": "https://www.myllynparas.fi/reseptit/liha-makaronilaatikko",
+      "links": [
+        {
+          "label": "Makaronilaatikko",
+          "url": "https://www.myllynparas.fi/reseptit/liha-makaronilaatikko"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-22c7cc9983570f6f0f53",
+      "importId": "arkireseptikansio-22c7cc9983570f6f0f53",
+      "name": "Helppo Linssilasagne",
+      "category": "Laatikko",
+      "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/helppo-linssilasagne",
+      "links": [
+        {
+          "label": "Helppo Linssilasagne",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/helppo-linssilasagne"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-033565603ebbcc040cd5",
+      "importId": "arkireseptikansio-033565603ebbcc040cd5",
+      "name": "Härkislasagne",
+      "category": "Laatikko",
+      "url": "https://liemessa.fi/2019/08/harkislasagne-uunitomaateilla/",
+      "links": [
+        {
+          "label": "Härkislasagne",
+          "url": "https://liemessa.fi/2019/08/harkislasagne-uunitomaateilla/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-535272a24423ddafbd4b",
+      "importId": "arkireseptikansio-535272a24423ddafbd4b",
+      "name": "Perinteinen lasagne",
+      "category": "Laatikko",
+      "url": "https://www.kinuskikissa.fi/lasagne",
+      "links": [
+        {
+          "label": "Perinteinen lasagne",
+          "url": "https://www.kinuskikissa.fi/lasagne"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-c6e95842452ed6f91533",
+      "importId": "arkireseptikansio-c6e95842452ed6f91533",
+      "name": "Uunifetapasta",
+      "category": "Laatikko",
+      "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/perheannos-uunifetapastaa",
+      "links": [
+        {
+          "label": "Uunifetapasta",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/perheannos-uunifetapastaa"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-e9c1715b50fd5097e175",
+      "importId": "arkireseptikansio-e9c1715b50fd5097e175",
+      "name": "Halloumi-orzovuoka",
+      "category": "Laatikko",
+      "url": "https://www.meillakotona.fi/reseptit/halloumi-orzovuoka",
+      "links": [
+        {
+          "label": "Halloumi-orzovuoka",
+          "url": "https://www.meillakotona.fi/reseptit/halloumi-orzovuoka"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-f3f1c156b4d8320deebf",
+      "importId": "arkireseptikansio-f3f1c156b4d8320deebf",
+      "name": "Vaikea mutta herkullisin lasagne",
+      "category": "Laatikko",
+      "url": "https://www.hs.fi/ruoka/art-2000010717700.html",
+      "links": [
+        {
+          "label": "Vaikea mutta herkullisin lasagne",
+          "url": "https://www.hs.fi/ruoka/art-2000010717700.html"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-d6e5cabfa6a4933ef317",
+      "importId": "arkireseptikansio-d6e5cabfa6a4933ef317",
+      "name": "Pinaatti-fetalasagne",
+      "category": "Laatikko",
+      "url": "https://www.myllynparas.fi/reseptit/pinaatti-fetalasagne",
+      "links": [
+        {
+          "label": "Pinaatti-fetalasagne",
+          "url": "https://www.myllynparas.fi/reseptit/pinaatti-fetalasagne"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-5e9d6dc25f12c86bdb80",
+      "importId": "arkireseptikansio-5e9d6dc25f12c86bdb80",
+      "name": "Tonnikalapastavuoka",
+      "category": "Laatikko",
+      "url": "https://www.meillakotona.fi/reseptit/tonnikalapastavuoka",
+      "links": [
+        {
+          "label": "Tonnikalapastavuoka",
+          "url": "https://www.meillakotona.fi/reseptit/tonnikalapastavuoka"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-e66be0e34666213a49ca",
+      "importId": "arkireseptikansio-e66be0e34666213a49ca",
+      "name": "Lohikiusaus / jauhelihakiusaus / tofukiusaus",
+      "category": "Laatikko",
+      "url": "https://yhteishyva.fi/reseptit/helppo-lohikiusaus/1ufgALpr0bvNaIJIUPDMOI",
+      "links": [
+        {
+          "label": "Lohikiusaus",
+          "url": "https://yhteishyva.fi/reseptit/helppo-lohikiusaus/1ufgALpr0bvNaIJIUPDMOI"
+        },
+        {
+          "label": "jauhelihakiusaus",
+          "url": "https://www.k-ruoka.fi/reseptit/jauhelihakiusaus"
+        },
+        {
+          "label": "tofukiusaus",
+          "url": "https://jalotofu.fi/reseptit/ennin-talvinen-tofukiusaus/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-8aa815881769183515c2",
+      "importId": "arkireseptikansio-8aa815881769183515c2",
+      "name": "Smetana-uunilohi",
+      "category": "Laatikko",
+      "url": "https://www.k-ruoka.fi/reseptit/helppo-smetana-uunilohi",
+      "links": [
+        {
+          "label": "Smetana-uunilohi",
+          "url": "https://www.k-ruoka.fi/reseptit/helppo-smetana-uunilohi"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-8b775280d085e02e7d20",
+      "importId": "arkireseptikansio-8b775280d085e02e7d20",
+      "name": "Stroganoff / tofustroganoff",
+      "category": "Laatikko",
+      "url": "https://yhteishyva.fi/reseptit/stroganoff/recipe-2394",
+      "links": [
+        {
+          "label": "Stroganoff",
+          "url": "https://yhteishyva.fi/reseptit/stroganoff/recipe-2394"
+        },
+        {
+          "label": "tofustroganoff",
+          "url": "https://jalotofu.fi/reseptit/kermainen-tofu-stroganoff/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-bd016412446db64cbad8",
+      "importId": "arkireseptikansio-bd016412446db64cbad8",
+      "name": "Tortellinivuoka",
+      "category": "Laatikko",
+      "url": "https://kokitjapotit.fi/nopea-arkiruoka-tortelliinivuoka/",
+      "links": [
+        {
+          "label": "Tortellinivuoka",
+          "url": "https://kokitjapotit.fi/nopea-arkiruoka-tortelliinivuoka/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-0a44a343161de5f13c10",
+      "importId": "arkireseptikansio-0a44a343161de5f13c10",
+      "name": "Kala-kasvisvuoka",
+      "category": "Laatikko",
+      "url": "https://www.martat.fi/reseptit/kala-kasvisvuoka/",
+      "links": [
+        {
+          "label": "Kala-kasvisvuoka",
+          "url": "https://www.martat.fi/reseptit/kala-kasvisvuoka/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-554b32c528d691212e17",
+      "importId": "arkireseptikansio-554b32c528d691212e17",
+      "name": "Grillissä: peanut butter-tofutikut, kasviksia sriracha-rubilla ja perunoita",
+      "category": "Peruna",
+      "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/tofutikut-ja-peanut-butter-kastike",
+      "links": [
+        {
+          "label": "peanut butter-tofutikut",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/tofutikut-ja-peanut-butter-kastike"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-49e6b2a081daf9746a35",
+      "importId": "arkireseptikansio-49e6b2a081daf9746a35",
+      "name": "Lyttyperunat(oheen tofua, fetaa tai katkarapuja)",
+      "category": "Peruna",
+      "url": "https://www.instagram.com/reels/DMfstZDN0O8/",
+      "links": [
+        {
+          "label": "Lyttyperunat",
+          "url": "https://www.instagram.com/reels/DMfstZDN0O8/"
+        },
+        {
+          "label": "tofua",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/crispy-tofu"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-8479e2641d4a381ed7d9",
+      "importId": "arkireseptikansio-8479e2641d4a381ed7d9",
+      "name": "Grillattua/paistettua lohta ja perunaa/perunamuusia",
+      "category": "Peruna",
+      "url": "https://www.s-kaupat.fi/tuote/apetit-perunamuusi-pakaste-350g/6430104926502",
+      "links": [
+        {
+          "label": "perunamuusia",
+          "url": "https://www.s-kaupat.fi/tuote/apetit-perunamuusi-pakaste-350g/6430104926502"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-2d0b6b15a5dbbcd4ce83",
+      "importId": "arkireseptikansio-2d0b6b15a5dbbcd4ce83",
+      "name": "Tex mex -uuniperuna (jauhelihan voi korvata tofulla jos tofun lisää viimeisenä)",
+      "category": "Peruna",
+      "url": "https://yhteishyva.fi/reseptit/texmex-perunat/recipe-21732",
+      "links": [
+        {
+          "label": "Tex mex -uuniperuna",
+          "url": "https://yhteishyva.fi/reseptit/texmex-perunat/recipe-21732"
+        },
+        {
+          "label": "tofulla",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/crispy-tofu"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-009490a563e1edb7d646",
+      "importId": "arkireseptikansio-009490a563e1edb7d646",
+      "name": "Uuniperuna eri täytevaihtoehtoja",
+      "category": "Peruna",
+      "url": "https://yhteishyva.fi/ruoka-ja-reseptit/uuniperuna-on-ikisuosikki-katso-herkulliset-ohjeet/2uQT03fbkItAobd5jvVpep",
+      "links": [
+        {
+          "label": "Uuniperuna eri täytevaihtoehtoja",
+          "url": "https://yhteishyva.fi/ruoka-ja-reseptit/uuniperuna-on-ikisuosikki-katso-herkulliset-ohjeet/2uQT03fbkItAobd5jvVpep"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-9d4c47dfcf6d17cc0a35",
+      "importId": "arkireseptikansio-9d4c47dfcf6d17cc0a35",
+      "name": "Kasvispihvit, jugurttikastike ja perunaa",
+      "category": "Peruna",
+      "url": "https://www.hs.fi/ruoka/art-2000011246754.html",
+      "links": [
+        {
+          "label": "Kasvispihvit, jugurttikastike",
+          "url": "https://www.hs.fi/ruoka/art-2000011246754.html"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-cf77dd700bf2c862ac5a",
+      "importId": "arkireseptikansio-cf77dd700bf2c862ac5a",
+      "name": "Nakkikeitto (vegenakki tai tavallinen)",
+      "category": "Peruna",
+      "url": "https://yhteishyva.fi/reseptit/nakkikeitto/recipe-667",
+      "links": [
+        {
+          "label": "Nakkikeitto",
+          "url": "https://yhteishyva.fi/reseptit/nakkikeitto/recipe-667"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-b0b2bdfe7a9f001018f0",
+      "importId": "arkireseptikansio-b0b2bdfe7a9f001018f0",
+      "name": "Kalakeitto",
+      "category": "Peruna",
+      "url": "https://kalaneuvos.fi/reseptit/kalakeitto/",
+      "links": [
+        {
+          "label": "Kalakeitto",
+          "url": "https://kalaneuvos.fi/reseptit/kalakeitto/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-0b071930f6bad5ada743",
+      "importId": "arkireseptikansio-0b071930f6bad5ada743",
+      "name": "Perunaa ja kanttarellikastiketta / suppilovahverokastiketta",
+      "category": "Peruna",
+      "url": "https://www.myllynparas.fi/reseptit/kanttarellikastike",
+      "links": [
+        {
+          "label": "kanttarellikastiketta",
+          "url": "https://www.myllynparas.fi/reseptit/kanttarellikastike"
+        },
+        {
+          "label": "suppilovahverokastiketta",
+          "url": "https://www.k-ruoka.fi/reseptit/suppilovahverokastike"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-c0233bb5302ddefb8062",
+      "importId": "arkireseptikansio-c0233bb5302ddefb8062",
+      "name": "Makkaraperunapelti (myös tofulla)",
+      "category": "Peruna",
+      "url": "https://kotiliesi.fi/resepti/makkaraperunat/",
+      "links": [
+        {
+          "label": "Makkaraperunapelti",
+          "url": "https://kotiliesi.fi/resepti/makkaraperunat/"
+        },
+        {
+          "label": "tofulla",
+          "url": "https://www.k-ruoka.fi/reseptit/vegaaniset-makkaraperunat"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-63c03fc5616759794735",
+      "importId": "arkireseptikansio-63c03fc5616759794735",
+      "name": "Jauhelihakastike / kasvisjauhiskastike ja perunaa",
+      "category": "Peruna",
+      "url": "https://www.valio.fi/reseptit/perinteinen-jauhelihakastike/",
+      "links": [
+        {
+          "label": "Jauhelihakastike",
+          "url": "https://www.valio.fi/reseptit/perinteinen-jauhelihakastike/"
+        },
+        {
+          "label": "kasvisjauhiskastike",
+          "url": "https://vegeviettelys.fi/kasvis-jauhiskastike/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-d7f85c71827295b453c2",
+      "importId": "arkireseptikansio-d7f85c71827295b453c2",
+      "name": "Makkarakastike / vegemakkarakastike",
+      "category": "Peruna",
+      "url": "https://www.soppa365.fi/reseptit/arjen-nopeat/makkarakastike",
+      "links": [
+        {
+          "label": "Makkarakastike",
+          "url": "https://www.soppa365.fi/reseptit/arjen-nopeat/makkarakastike"
+        },
+        {
+          "label": "vegemakkarakastike",
+          "url": "https://yhteishyva.fi/reseptit/vegaaninen-makkarakastike/4q02zZQfiU2rDXNo8lCv5z"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-66f2d600907b53d031ae",
+      "importId": "arkireseptikansio-66f2d600907b53d031ae",
+      "name": "Lihapullat/vihapullat, ruskea kastike ja perunamuussi",
+      "category": "Peruna",
+      "url": "https://www.s-kaupat.fi/tuote/kivikylan-palvarin-lihapyorykka-350g/6406300009608",
+      "links": [
+        {
+          "label": "Lihapullat",
+          "url": "https://www.s-kaupat.fi/tuote/kivikylan-palvarin-lihapyorykka-350g/6406300009608"
+        },
+        {
+          "label": "vihapullat",
+          "url": "https://www.s-kaupat.fi/tuote/apetit-kasvisjauhispyorykat-pakaste-240g/6430104966829"
+        },
+        {
+          "label": "ruskea kastike",
+          "url": "https://www.s-kaupat.fi/tuote/knorr-ruskeakastike-kastikeaines-90-g/8710604729291"
+        },
+        {
+          "label": "perunamuussi",
+          "url": "https://www.s-kaupat.fi/tuote/apetit-perunamuusi-pakaste-350g/6430104926502"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-9e837de2b4aa1bf420a4",
+      "importId": "arkireseptikansio-9e837de2b4aa1bf420a4",
+      "name": "Kikhernepihvit ja peruna",
+      "category": "Peruna",
+      "url": "https://www.k-ruoka.fi/reseptit/kikhernepihvit",
+      "links": [
+        {
+          "label": "Kikhernepihvit",
+          "url": "https://www.k-ruoka.fi/reseptit/kikhernepihvit"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-94731b83c1985c903a6e",
+      "importId": "arkireseptikansio-94731b83c1985c903a6e",
+      "name": "Kalanyytit uunissa",
+      "category": "Peruna",
+      "url": "https://www.k-ruoka.fi/reseptit/kirjolohi-kasvisnyytit",
+      "links": [
+        {
+          "label": "Kalanyytit uunissa",
+          "url": "https://www.k-ruoka.fi/reseptit/kirjolohi-kasvisnyytit"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-cee95115a4225f0f71c5",
+      "importId": "arkireseptikansio-cee95115a4225f0f71c5",
+      "name": "Feta-pinaatti-pannukakku",
+      "category": "Uusi resepti",
+      "url": "https://www.hs.fi/ruoka/art-2000010996885.html",
+      "links": [
+        {
+          "label": "Feta-pinaatti-pannukakku",
+          "url": "https://www.hs.fi/ruoka/art-2000010996885.html"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-6b18a9559299e842036c",
+      "importId": "arkireseptikansio-6b18a9559299e842036c",
+      "name": "Kikherne-pasta",
+      "category": "Uusi resepti",
+      "url": "https://viimeistamuruamyoten.com/aurinkokuivattu-tomaatti-kikhernepasta/",
+      "links": [
+        {
+          "label": "Kikherne-pasta",
+          "url": "https://viimeistamuruamyoten.com/aurinkokuivattu-tomaatti-kikhernepasta/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-894b7dfa68914637d120",
+      "importId": "arkireseptikansio-894b7dfa68914637d120",
+      "name": "Kala-tacot",
+      "category": "Uusi resepti",
+      "url": "https://jarvikyla.fi/reseptit/vihreat-kalatacot/",
+      "links": [
+        {
+          "label": "Kala-tacot",
+          "url": "https://jarvikyla.fi/reseptit/vihreat-kalatacot/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-592b807f47dc0a0e6d56",
+      "importId": "arkireseptikansio-592b807f47dc0a0e6d56",
+      "name": "Valkosipulipasta",
+      "category": "Uusi resepti",
+      "url": "https://www.hs.fi/ruoka/art-2000011410618.html",
+      "links": [
+        {
+          "label": "Valkosipulipasta",
+          "url": "https://www.hs.fi/ruoka/art-2000011410618.html"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-acf7f057a4054bdfefd9",
+      "importId": "arkireseptikansio-acf7f057a4054bdfefd9",
+      "name": "Uunifetapasta broccolinilla",
+      "category": "Uusi resepti",
+      "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/uunifetapasta-broccolinilla",
+      "links": [
+        {
+          "label": "Uunifetapasta broccolinilla",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/uunifetapasta-broccolinilla"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-5b3e3908fb3339a47e59",
+      "importId": "arkireseptikansio-5b3e3908fb3339a47e59",
+      "name": "Kevätrullat",
+      "category": "Uusi resepti",
+      "url": "https://www.kinuskikissa.fi/vietnamilaiset-kevatrullat",
+      "links": [
+        {
+          "label": "Kevätrullat",
+          "url": "https://www.kinuskikissa.fi/vietnamilaiset-kevatrullat"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-26e7d2e095eecfd3ec10",
+      "importId": "arkireseptikansio-26e7d2e095eecfd3ec10",
+      "name": "Cowboy-keitto / Soija-cowboy-keitto",
+      "category": "Uusi resepti",
+      "url": "https://www.hellapoliisi.fi/reseptit/keitot/cowboy-keitto/",
+      "links": [
+        {
+          "label": "Cowboy-keitto",
+          "url": "https://www.hellapoliisi.fi/reseptit/keitot/cowboy-keitto/"
+        },
+        {
+          "label": "Soija-cowboy-keitto",
+          "url": "https://www.instagram.com/reel/DNNubH8NfOZ/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-91ee06918838fffe3af5",
+      "importId": "arkireseptikansio-91ee06918838fffe3af5",
+      "name": "Maissichowder",
+      "category": "Uusi resepti",
+      "url": "https://www.bellatable.fi/reseptit/maissichowder",
+      "links": [
+        {
+          "label": "Maissichowder",
+          "url": "https://www.bellatable.fi/reseptit/maissichowder"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-28eb31d0c3240964b6f6",
+      "importId": "arkireseptikansio-28eb31d0c3240964b6f6",
+      "name": "Bang bang -tofu",
+      "category": "Uusi resepti",
+      "url": "https://jalotofu.fi/reseptit/bang-bang-tofu-airfryerilla/",
+      "links": [
+        {
+          "label": "Bang bang -tofu",
+          "url": "https://jalotofu.fi/reseptit/bang-bang-tofu-airfryerilla/"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    },
+    {
+      "id": "word-ca56a7501101389c5fff",
+      "importId": "arkireseptikansio-ca56a7501101389c5fff",
+      "name": "“Äiti mä en halua puuroa” -mysli",
+      "category": "Uusi resepti",
+      "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/aiti-ma-en-halua-puuroa-mysli",
+      "links": [
+        {
+          "label": "“Äiti mä en halua puuroa” -mysli",
+          "url": "https://organisoituarkikaaos.com/blogs/arkiruokareseptit/aiti-ma-en-halua-puuroa-mysli"
+        }
+      ],
+      "ingredients": "",
+      "notes": ""
+    }
+  ]
+}
