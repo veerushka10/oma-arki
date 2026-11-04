@@ -10,6 +10,7 @@ let tab = "today";
 let selectedDate = dateKey(new Date());
 let weekStart = monday(new Date());
 let month = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
+let recipeCategory = "";
 let toastTimer;
 
 function esc(value) {
@@ -44,7 +45,9 @@ function isValidData(value) {
   const isObject = v => v !== null && typeof v === "object" && !Array.isArray(v);
   const isDate = v => isString(v) && /^\d{4}-\d{2}-\d{2}$/.test(v) && dateKey(fromKey(v)) === v;
   return isObject(value) && value.version === 1 &&
-    Array.isArray(value.recipes) && value.recipes.every(r => isObject(r) && isString(r.id) && isString(r.name) && isString(r.url) && isString(r.ingredients) && isString(r.notes)) &&
+    Array.isArray(value.recipes) && value.recipes.every(r => isObject(r) && isString(r.id) && isString(r.name) && isString(r.url) && isString(r.ingredients) && isString(r.notes) &&
+      (r.category === undefined || isString(r.category)) && (r.importId === undefined || isString(r.importId)) &&
+      (r.links === undefined || (Array.isArray(r.links) && r.links.every(link => isObject(link) && isString(link.url) && isString(link.label))))) &&
     isObject(value.meals) && Object.entries(value.meals).every(([date, recipeId]) => isDate(date) && isString(recipeId)) &&
     Array.isArray(value.shopping) && value.shopping.every(i => isObject(i) && isString(i.id) && isString(i.text) && typeof i.checked === "boolean") &&
     Array.isArray(value.tasks) && value.tasks.every(t => isObject(t) && isString(t.id) && isString(t.name) && ((t.type === "once" && isDate(t.date)) || (t.type === "weekly" && Number.isInteger(t.weekday) && t.weekday >= 0 && t.weekday <= 6))) &&
@@ -108,6 +111,8 @@ function renderToday() {
 }
 function renderMeals() {
   const weekEnd = addDays(weekStart, 6);
+  const categories = [...new Set(data.recipes.map(recipe => recipe.category).filter(Boolean))].sort((a, b) => a.localeCompare(b, "fi"));
+  const filtered = data.recipes.filter(recipe => !recipeCategory || recipe.category === recipeCategory);
   const days = Array.from({ length: 7 }, (_, index) => {
     const date = dateKey(addDays(weekStart, index));
     const options = data.recipes.map(recipe => `<option value="${esc(recipe.id)}" ${data.meals[date] === recipe.id ? "selected" : ""}>${esc(recipe.name)}</option>`).join("");
@@ -116,7 +121,10 @@ function renderMeals() {
   }).join("");
   return `<div class="heading"><h2>Viikon ruoat</h2><button class="primary" data-add-recipe>+ Resepti</button></div>
     <section class="card"><div class="row spread"><button class="plain" data-week="-1" aria-label="Edellinen viikko">←</button><strong>${esc(niceDate(dateKey(weekStart), { day: "numeric", month: "numeric" }))} – ${esc(niceDate(dateKey(weekEnd), { day: "numeric", month: "numeric", year: "numeric" }))}</strong><button class="plain" data-week="1" aria-label="Seuraava viikko">→</button></div>${days}<button class="primary" data-generate-shopping>Muodosta ostoslista</button><p class="hint">Lista muodostetaan tämän näkyvän viikon aterioista.</p></section>
-    <div class="heading"><h2>Omat reseptit</h2></div><section class="card">${data.recipes.length ? data.recipes.map(recipe => `<div class="item row"><strong class="grow">${esc(recipe.name)}</strong><button class="plain" data-view-recipe="${esc(recipe.id)}">Avaa</button><button class="plain" data-edit-recipe="${esc(recipe.id)}">Muokkaa</button></div>`).join("") : "<div class='empty'>Lisää ensimmäinen resepti. Voit tallentaa oman ohjeen tai linkin ja ainekset.</div>"}</section>`;
+    <div class="heading"><h2>Omat reseptit</h2></div><section class="card">
+    <button class="secondary primary" data-import-recipes>Tuo reseptit tiedostosta</button>
+    ${categories.length ? `<label for="category-filter">Näytä kategoria</label><select id="category-filter"><option value="">Kaikki reseptit</option>${categories.map(category => `<option value="${esc(category)}" ${recipeCategory === category ? "selected" : ""}>${esc(category)}</option>`).join("")}</select>` : ""}
+    ${filtered.length ? filtered.map(recipe => `<div class="item row"><span class="grow"><strong>${esc(recipe.name)}</strong>${recipe.category ? `<br><span class="muted">${esc(recipe.category)}</span>` : ""}</span><button class="plain" data-view-recipe="${esc(recipe.id)}">Avaa</button><button class="plain" data-edit-recipe="${esc(recipe.id)}">Muokkaa</button></div>`).join("") : "<div class='empty'>Ei reseptejä tässä kategoriassa. Lisää oma resepti tai tuo reseptit tiedostosta.</div>"}</section>`;
 }
 function renderShopping() {
   const items = data.shopping.map(item => `<div class="item row"><input class="check" type="checkbox" data-check-shopping="${esc(item.id)}" ${item.checked ? "checked" : ""} aria-label="Merkitse ${esc(item.text)} ostetuksi"><span class="grow ${item.checked ? "done" : ""}">${esc(item.text)}</span><button class="plain danger" data-delete-shopping="${esc(item.id)}" aria-label="Poista ${esc(item.text)}">✕</button></div>`).join("");
@@ -145,20 +153,23 @@ function render() {
 }
 function recipeDialog(recipe) {
   const editing = Boolean(recipe);
-  recipe ||= { name: "", url: "", ingredients: "", notes: "" };
+  recipe ||= { name: "", url: "", ingredients: "", notes: "", category: "" };
+  const existingLinks = recipe.links?.length ? recipe.links : (recipe.url ? [{ url: recipe.url, label: "" }] : []);
   modal(`<h2>${editing ? "Muokkaa reseptiä" : "Lisää resepti"}</h2><form id="recipe-form">
     <label for="recipe-name">Ruoan nimi</label><input id="recipe-name" name="name" required maxlength="150" value="${esc(recipe.name)}">
-    <label for="recipe-url">Linkki ohjeeseen (valinnainen)</label><input id="recipe-url" name="url" type="url" inputmode="url" placeholder="https://" value="${esc(recipe.url)}">
+    <label for="recipe-category">Kategoria (valinnainen)</label><input id="recipe-category" name="category" maxlength="100" placeholder="Esim. Helpot tai Pasta" value="${esc(recipe.category || "")}">
+    <label for="recipe-links">Linkit ohjeisiin (valinnainen)</label><p class="hint">Kirjoita yksi osoite kullekin riville.</p><textarea id="recipe-links" name="links" placeholder="https://...">${esc(existingLinks.map(link => link.url).join("\n"))}</textarea>
     <label for="recipe-ingredients">Ainekset</label><p class="hint">Kirjoita yksi aines omalle rivilleen, esimerkiksi ”2 dl maitoa”.</p><textarea id="recipe-ingredients" name="ingredients">${esc(recipe.ingredients)}</textarea>
     <label for="recipe-notes">Ohje tai omat muistiinpanot (valinnainen)</label><textarea id="recipe-notes" name="notes">${esc(recipe.notes)}</textarea>
     <div class="dialog-actions"><button class="primary">Tallenna</button><button type="button" class="secondary primary" data-close>Peruuta</button>${editing ? "<button type='button' class='plain danger' data-delete-recipe>Poista resepti</button>" : ""}</div></form>`, dialog => {
     dialog.querySelector("#recipe-form").addEventListener("submit", event => {
       event.preventDefault();
       const form = new FormData(event.currentTarget);
-      const name = form.get("name").trim(), url = form.get("url").trim();
+      const name = form.get("name").trim();
+      const links = form.get("links").split(/\r?\n/).map(line => line.trim()).filter(Boolean);
       if (!name) { alert("Kirjoita reseptin nimi."); return; }
-      if (url && !linkFor(url)) { alert("Linkin tulee alkaa https:// tai http://."); return; }
-      const entry = { id: recipe.id || id(), name, url, ingredients: form.get("ingredients").trim(), notes: form.get("notes").trim() };
+      if (links.some(link => !linkFor(link))) { alert("Jokaisen linkin tulee alkaa https:// tai http://."); return; }
+      const entry = { ...recipe, id: recipe.id || id(), name, url: links[0] || "", links: links.map(url => ({ url, label: existingLinks.find(link => link.url === url)?.label || "" })), category: form.get("category").trim(), ingredients: form.get("ingredients").trim(), notes: form.get("notes").trim() };
       if (editing) data.recipes = data.recipes.map(item => item.id === recipe.id ? entry : item);
       else data.recipes.push(entry);
       dialog.close(); saveRender("Resepti tallennettu");
@@ -172,10 +183,43 @@ function recipeDialog(recipe) {
   });
 }
 function viewRecipe(recipe) {
-  const url = linkFor(recipe.url);
-  modal(`<h2>${esc(recipe.name)}</h2>${url ? `<p><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">Avaa alkuperäinen resepti ↗</a></p><p class="hint">Verkkolinkki tarvitsee internetyhteyden.</p>` : ""}
+  const links = (recipe.links?.length ? recipe.links : [{ url: recipe.url, label: "" }]).filter(link => linkFor(link.url));
+  modal(`<h2>${esc(recipe.name)}</h2>${recipe.category ? `<p><span class="tag">${esc(recipe.category)}</span></p>` : ""}${links.length ? `<p>${links.map((link, index) => `<a href="${esc(linkFor(link.url))}" target="_blank" rel="noopener noreferrer">${esc(link.label || (links.length === 1 ? "Avaa alkuperäinen resepti" : `Reseptilinkki ${index + 1}`))} ↗</a>`).join("<br>")}</p><p class="hint">Verkkolinkit tarvitsevat internetyhteyden.</p>` : ""}
     <h3>Ainekset</h3><p style="white-space:pre-wrap">${esc(recipe.ingredients || "Ei tallennettuja aineksia.")}</p>${recipe.notes ? `<h3>Ohje tai muistiinpanot</h3><p style="white-space:pre-wrap">${esc(recipe.notes)}</p>` : ""}
     <div class="dialog-actions"><button class="primary" data-edit>Muokkaa</button><button class="secondary primary" data-close>Sulje</button></div>`, dialog => dialog.querySelector("[data-edit]").addEventListener("click", () => { dialog.close(); recipeDialog(recipe); }));
+}
+function importRecipesDialog() {
+  modal(`<h2>Tuo reseptejä</h2><p>Valitse Oma arkea varten tehty reseptien JSON-tiedosto. Reseptit lisätään nykyisten tietojesi rinnalle; aiempia reseptejä, ostoksia tai tehtäviä ei poisteta.</p>
+    <label for="recipes-file">Reseptitiedosto</label><input type="file" id="recipes-file" accept=".json,application/json"><p class="hint">Word-tiedosto pitää ensin muuntaa Oma arjen reseptitiedostoksi. Jo tuotuja reseptejä ei lisätä uudelleen.</p><button class="secondary primary" data-close>Sulje</button>`, dialog => {
+    dialog.querySelector("#recipes-file").addEventListener("change", async event => {
+      const file = event.target.files[0];
+      if (!file) return;
+      try {
+        if (file.size > 5 * 1024 * 1024) throw new Error("Tiedosto on liian suuri.");
+        const bundle = JSON.parse(await file.text());
+        if (!bundle || bundle.type !== "oma-arki-recipes" || bundle.version !== 1 || !Array.isArray(bundle.recipes) ||
+            !isValidData({ ...emptyData(), recipes: bundle.recipes }) ||
+            bundle.recipes.some(recipe => !recipe.importId || !recipe.name.trim() || [recipe.url, ...(recipe.links || []).map(link => link.url)].some(url => url && !linkFor(url)))) {
+          throw new Error("Tiedosto ei ole kelvollinen Oma arki -reseptitiedosto.");
+        }
+        const known = new Set(data.recipes.map(recipe => recipe.importId).filter(Boolean));
+        const additions = [];
+        for (const recipe of bundle.recipes) {
+          if (!known.has(recipe.importId)) {
+            additions.push({ ...recipe, id: id() });
+            known.add(recipe.importId);
+          }
+        }
+        if (!additions.length) { alert("Kaikki tämän tiedoston reseptit on jo tuotu."); return; }
+        const previous = data.recipes;
+        data.recipes = [...data.recipes, ...additions];
+        if (!save()) { data.recipes = previous; return; }
+        dialog.close(); recipeCategory = ""; render();
+        alert(`${additions.length} reseptiä lisätty. Tarkista ainekset ennen ostoslistan muodostamista.`);
+      } catch (error) { alert(`Reseptejä ei voitu tuoda: ${error.message}`); }
+      finally { event.target.value = ""; }
+    });
+  });
 }
 function taskDialog(task) {
   const editing = Boolean(task);
@@ -245,7 +289,9 @@ document.querySelector(".tabs").addEventListener("click", event => {
 document.querySelector("#settings-button").addEventListener("click", settingsDialog);
 app.addEventListener("change", event => {
   const element = event.target;
-  if (element.matches("[data-meal]")) {
+  if (element.id === "category-filter") {
+    recipeCategory = element.value; render();
+  } else if (element.matches("[data-meal]")) {
     if (element.value) data.meals[element.dataset.meal] = element.value;
     else delete data.meals[element.dataset.meal];
     saveRender();
@@ -270,12 +316,15 @@ app.addEventListener("click", event => {
   const a = button.dataset;
   if (a.go) { tab = a.go; render(); }
   else if ("addRecipe" in a) recipeDialog();
+  else if ("importRecipes" in a) importRecipesDialog();
   else if (a.editRecipe) { const recipe = data.recipes.find(r => r.id === a.editRecipe); if (recipe) recipeDialog(recipe); }
   else if (a.viewRecipe) { const recipe = data.recipes.find(r => r.id === a.viewRecipe); if (recipe) viewRecipe(recipe); }
   else if (a.week) { weekStart = addDays(weekStart, Number(a.week) * 7); render(); }
   else if ("generateShopping" in a) {
     const recipes = Array.from({ length: 7 }, (_, index) => data.recipes.find(r => r.id === data.meals[dateKey(addDays(weekStart, index))])).filter(Boolean);
     if (!recipes.length) { alert("Valitse ensin vähintään yksi ruoka tälle viikolle."); return; }
+    const missing = recipes.filter(recipe => !recipe.ingredients.trim());
+    if (missing.length) { alert(`Lisää ensin ainekset näihin resepteihin, jotta ostoslistasta ei puutu tuotteita:\n\n${[...new Set(missing.map(recipe => recipe.name))].join("\n")}`); return; }
     const lines = recipes.flatMap(r => r.ingredients.split(/\r?\n/).map(line => line.trim()).filter(Boolean));
     if (!lines.length) { alert("Valituissa resepteissä ei ole aineksia. Lisää ne ensin resepteihin."); return; }
     if (data.shopping.length && !confirm("Korvataanko nykyinen ostoslista tämän viikon aineksilla?")) return;

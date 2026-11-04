@@ -16,7 +16,9 @@ Palvelimella ei tarvita tietokantaa tai kirjautumista. Älä julkaise omia varmu
 - Tiedot tallentuvat laitteen selaintallennustilaan. Tallennustila voi kadota esimerkiksi sovelluksen tai selaintietojen poistamisen yhteydessä. Saman sivuston Safari- ja kotinäyttöversiot voivat käyttää eri tallennustiloja.
 - Asetuksista voi viedä JSON-varmuuskopion ja palauttaa sen. Palautus korvaa kyseisen näkymän kaikki nykyiset tiedot.
 - Reseptien ainekset kirjoitetaan yksi kullekin riville. Ostoslista muodostuu näkyvän viikon aterioiden ainesriveistä. Se **korvaa** vahvistuksen jälkeen aiemman listan eikä yhdistä samankaltaisten tuotteiden määriä; tarkista määrät ja päällekkäisyydet itse.
-- Alkuperäisten reseptien linkit avautuvat verkkosivuille ja tarvitsevat nettiyhteyden. Automaattista reseptien tuontia ei ole.
+- Resepteille voi lisätä itse kategorian ja useita linkkejä. Ruoat-näkymässä voi suodattaa reseptejä kategorian mukaan.
+- Ruoat-näkymässä voi tuoda erikseen sovellusta varten muunnetun reseptien JSON-tiedoston. Tuonti lisää reseptit aiempien tietojen rinnalle ja ohittaa jo tuodut reseptit. JSON-reseptitiedosto ei ole sama asia kuin varmuuskopio, eikä Word-tiedostoja voi tuoda suoraan.
+- Alkuperäisten reseptien linkit avautuvat verkkosivuille ja tarvitsevat nettiyhteyden. Sovellus ei lue aineksia linkitetyiltä sivuilta: lisää ainekset itse ennen ostoslistan muodostamista.
 - Viikkotehtävät toistuvat viikonpäivän mukaan. Yksittäiset kuukausitehtävät lisätään itse päivämäärälle. Sivuston vaihtuvat PDF-kalenterit eivät päivity automaattisesti.
 - Sovellus ei lähetä puhelimen ilmoituksia eikä synkronoi tietoja laitteiden välillä.
 - Offline-käyttö vaatii ensimmäisellä käyttökerralla HTTPS-yhteyden ja onnistuneen sovelluksen tiedostojen latauksen. Palvelintyypistä ja iOS:n tallennustilan hallinnasta riippuen offline-tiedostot voivat poistua.
