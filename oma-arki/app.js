@@ -4,6 +4,16 @@ const KEY = "oma-arki-v1";
 const DEFAULT_RECIPE_BUNDLE = "arkireseptikansio-v1";
 const weekdays = ["ma", "ti", "ke", "to", "pe", "la", "su"];
 const weekdayNames = ["Maanantai", "Tiistai", "Keskiviikko", "Torstai", "Perjantai", "Lauantai", "Sunnuntai"];
+const weekdayThemes = [
+  { category: "Super helppo", icon: "🌿" },
+  { category: "Pasta", icon: "🍝" },
+  { category: "Texmex", icon: "🌮" },
+  { category: "Riisi / Wok", icon: "🍚" },
+  { category: "Laatikko", icon: "🥘" },
+  { category: "Peruna", icon: "🥔" },
+  { category: "Uusi resepti", icon: "✨" }
+];
+const NO_CATEGORY = "__oma_arki_ilman_kategoriaa__";
 const emptyData = () => ({ version: 1, recipes: [], meals: {}, shopping: [], tasks: [], completed: {}, defaultBundles: [] });
 const app = document.querySelector("#app");
 let data;
@@ -12,6 +22,7 @@ let selectedDate = dateKey(new Date());
 let weekStart = monday(new Date());
 let month = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
 let recipeCategory = "";
+const mealCategories = {};
 let defaultRecipeError = false;
 let defaultRecipeLoading = false;
 let toastTimer;
@@ -107,32 +118,43 @@ function taskRows(tasks, date) {
 function renderToday() {
   const today = dateKey(new Date());
   const recipe = data.recipes.find(item => item.id === data.meals[today]);
-  return `<section class="card soft"><span class="eyebrow">${esc(niceDate(today))}</span><h2 style="margin-top:8px">Rauhallisesti, yksi asia kerrallaan.</h2><p class="hint">Kaikkea ei tarvitse tehdä tänään.</p></section>
+  return `<section class="card soft hero"><span class="hero-icon" aria-hidden="true">☀️</span><span class="eyebrow">${esc(niceDate(today))}</span><h2>Rauhallisesti, yksi asia kerrallaan.</h2><p class="hint">Kaikkea ei tarvitse tehdä tänään.</p></section>
     <div class="heading"><h2>Tämän päivän ruoka</h2><button class="plain" data-go="meals">Suunnittele →</button></div>
-    <section class="card">${recipe ? `<strong>${esc(recipe.name)}</strong> <button class="plain" data-view-recipe="${esc(recipe.id)}">Avaa</button>` : "<p class='muted'>Ei vielä suunniteltua ruokaa.</p>"}</section>
+    <section class="card highlight-card"><span class="section-icon" aria-hidden="true">🍽️</span><div class="grow">${recipe ? `<strong>${esc(recipe.name)}</strong><br><span class="muted">Tämän päivän ruoka</span>` : "<span class='muted'>Ei vielä suunniteltua ruokaa.</span>"}</div>${recipe ? `<button class="plain" data-view-recipe="${esc(recipe.id)}">Avaa →</button>` : ""}</section>
     <div class="heading"><h2>Tämän päivän tehtävät</h2><button class="plain" data-go="tasks">Kalenteri →</button></div>
     <section class="card">${taskRows(tasksFor(today), today)}</section>`;
 }
 function renderMeals() {
   const weekEnd = addDays(weekStart, 6);
   const categories = [...new Set(data.recipes.map(recipe => recipe.category).filter(Boolean))].sort((a, b) => a.localeCompare(b, "fi"));
+  if (recipeCategory && !categories.includes(recipeCategory)) recipeCategory = "";
   const filtered = data.recipes.filter(recipe => !recipeCategory || recipe.category === recipeCategory);
   const days = Array.from({ length: 7 }, (_, index) => {
     const date = dateKey(addDays(weekStart, index));
-    const options = data.recipes.map(recipe => `<option value="${esc(recipe.id)}" ${data.meals[date] === recipe.id ? "selected" : ""}>${esc(recipe.name)}</option>`).join("");
     const recipe = data.recipes.find(item => item.id === data.meals[date]);
-    return `<div class="item"><div class="row spread"><strong>${esc(weekdayNames[index])} ${esc(niceDate(date, { day: "numeric", month: "numeric" }))}</strong>${recipe ? `<button class="plain" data-view-recipe="${esc(recipe.id)}">Avaa resepti</button>` : ""}</div><select aria-label="${esc(weekdayNames[index])} ruoka" data-meal="${date}"><option value="">Ei valittua ruokaa</option>${options}</select></div>`;
+    const category = mealCategories[date] ?? (recipe ? recipe.category || NO_CATEGORY : weekdayThemes[index].category);
+    const categoryOptions = [...new Set([...weekdayThemes.map(theme => theme.category), ...categories])];
+    const matches = data.recipes.filter(item => category === "" || (category === NO_CATEGORY ? !item.category : item.category === category));
+    const options = matches.map(item => `<option value="${esc(item.id)}" ${recipe?.id === item.id ? "selected" : ""}>${esc(item.name)}</option>`).join("");
+    const currentOutsideCategory = recipe && !matches.some(item => item.id === recipe.id)
+      ? `<option value="${esc(recipe.id)}" selected>Valittuna: ${esc(recipe.name)}</option>` : "";
+    return `<div class="day-card">
+      <div class="day-head"><span class="day-icon" aria-hidden="true">${weekdayThemes[index].icon}</span><div class="grow"><strong>${esc(weekdayNames[index])}</strong><span class="day-date">${esc(niceDate(date, { day: "numeric", month: "numeric" }))}</span></div>${recipe ? `<button class="plain" data-view-recipe="${esc(recipe.id)}">Avaa →</button>` : ""}</div>
+      <label for="meal-category-${date}">Kategoria</label><select id="meal-category-${date}" data-meal-category="${date}"><option value="" ${category === "" ? "selected" : ""}>Kaikki kategoriat</option>${categoryOptions.map(item => `<option value="${esc(item)}" ${category === item ? "selected" : ""}>${esc(item)}</option>`).join("")}<option value="${NO_CATEGORY}" ${category === NO_CATEGORY ? "selected" : ""}>Ilman kategoriaa</option></select>
+      <label for="meal-${date}">Ruoka</label><select id="meal-${date}" data-meal="${date}"><option value="">Valitse ruoka</option>${currentOutsideCategory}${options}</select>
+      ${matches.length ? "" : `<p class="hint">Tässä kategoriassa ei ole vielä reseptejä.</p>`}
+      </div>`;
   }).join("");
-  return `<div class="heading"><h2>Viikon ruoat</h2><button class="primary" data-add-recipe>+ Resepti</button></div>
-    <section class="card"><div class="row spread"><button class="plain" data-week="-1" aria-label="Edellinen viikko">←</button><strong>${esc(niceDate(dateKey(weekStart), { day: "numeric", month: "numeric" }))} – ${esc(niceDate(dateKey(weekEnd), { day: "numeric", month: "numeric", year: "numeric" }))}</strong><button class="plain" data-week="1" aria-label="Seuraava viikko">→</button></div>${days}<button class="primary" data-generate-shopping>Muodosta ostoslista</button><p class="hint">Lista muodostetaan tämän näkyvän viikon aterioista.</p></section>
+  return `<div class="heading"><div><span class="eyebrow">Helpompaa arkea</span><h2>Viikon ruoat</h2></div><button class="primary" data-add-recipe>+ Resepti</button></div>
+    <section class="week-panel"><div class="week-switch row spread"><button class="plain" data-week="-1" aria-label="Edellinen viikko">←</button><strong>${esc(niceDate(dateKey(weekStart), { day: "numeric", month: "numeric" }))} – ${esc(niceDate(dateKey(weekEnd), { day: "numeric", month: "numeric", year: "numeric" }))}</strong><button class="plain" data-week="1" aria-label="Seuraava viikko">→</button></div><p class="hint week-hint">Valitse päivälle sopiva ruoka. Voit vaihtaa kategoriaa milloin vain.</p>${days}<div class="week-footer"><button class="primary" data-generate-shopping>🛒 Muodosta ostoslista</button><p class="hint">Lista muodostetaan tämän näkyvän viikon aterioista.</p></div></section>
     <div class="heading"><h2>Omat reseptit</h2></div><section class="card">
     <button class="secondary primary" data-import-recipes>Tuo reseptit tiedostosta</button>
     ${categories.length ? `<label for="category-filter">Näytä kategoria</label><select id="category-filter"><option value="">Kaikki reseptit</option>${categories.map(category => `<option value="${esc(category)}" ${recipeCategory === category ? "selected" : ""}>${esc(category)}</option>`).join("")}</select>` : ""}
-    ${filtered.length ? filtered.map(recipe => `<div class="item row"><span class="grow"><strong>${esc(recipe.name)}</strong>${recipe.category ? `<br><span class="muted">${esc(recipe.category)}</span>` : ""}</span><button class="plain" data-view-recipe="${esc(recipe.id)}">Avaa</button><button class="plain" data-edit-recipe="${esc(recipe.id)}">Muokkaa</button></div>`).join("") : "<div class='empty'>Ei reseptejä tässä kategoriassa. Lisää oma resepti tai tuo reseptit tiedostosta.</div>"}</section>`;
+    ${filtered.length ? filtered.map(recipe => `<div class="item row"><span class="recipe-icon" aria-hidden="true">🍴</span><span class="grow"><strong>${esc(recipe.name)}</strong>${recipe.category ? `<br><span class="muted">${esc(recipe.category)}</span>` : ""}</span><button class="plain" data-view-recipe="${esc(recipe.id)}">Avaa</button><button class="plain" data-edit-recipe="${esc(recipe.id)}">Muokkaa</button></div>`).join("") : "<div class='empty'>Ei reseptejä tässä kategoriassa. Lisää oma resepti tai tuo reseptit tiedostosta.</div>"}</section>`;
 }
 function renderShopping() {
   const items = data.shopping.map(item => `<div class="item row"><input class="check" type="checkbox" data-check-shopping="${esc(item.id)}" ${item.checked ? "checked" : ""} aria-label="Merkitse ${esc(item.text)} ostetuksi"><span class="grow ${item.checked ? "done" : ""}">${esc(item.text)}</span><button class="plain danger" data-delete-shopping="${esc(item.id)}" aria-label="Poista ${esc(item.text)}">✕</button></div>`).join("");
-  return `<div class="heading"><h2>Ostoslista</h2></div><section class="card"><p class="hint">Rastita ostokset kaupassa. Voit lisätä myös muita tuotteita.</p><form id="shopping-form" class="row"><input name="item" aria-label="Lisättävä ostos" placeholder="Esim. kauramaito" required maxlength="200"><button class="primary">Lisää</button></form>${items || "<div class='empty'>Lista on vielä tyhjä. Muodosta se Ruoat-välilehdellä tai lisää ostoksia itse.</div>"}${items ? "<button class='plain danger' data-clear-shopping>Tyhjennä lista</button>" : ""}</section>`;
+  return `<div class="heading"><div><span class="eyebrow">Kauppaan mukaan</span><h2>Ostoslista</h2></div><span class="section-icon" aria-hidden="true">🛒</span></div><section class="card"><p class="hint">Rastita ostokset kaupassa. Voit lisätä myös muita tuotteita.</p><form id="shopping-form" class="row"><input name="item" aria-label="Lisättävä ostos" placeholder="Esim. kauramaito" required maxlength="200"><button class="primary">Lisää</button></form>${items || "<div class='empty'>Lista on vielä tyhjä. Muodosta se Ruoat-välilehdellä tai lisää ostoksia itse.</div>"}${items ? "<button class='plain danger' data-clear-shopping>Tyhjennä lista</button>" : ""}</section>`;
 }
 function renderTasks() {
   const year = month.getFullYear(), monthIndex = month.getMonth();
@@ -143,7 +165,7 @@ function renderTasks() {
     const key = dateKey(new Date(year, monthIndex, index + 1));
     return `<button class="${tasksFor(key).length ? "has-tasks" : ""} ${selectedDate === key ? "selected" : ""}" data-select-date="${key}" aria-label="${esc(niceDate(key))}${tasksFor(key).length ? ", tehtäviä" : ""}" ${selectedDate === key ? 'aria-current="date"' : ""}>${index + 1}</button>`;
   }).join("");
-  return `<div class="heading"><h2>Tehtävät</h2><button class="primary" data-add-task>+ Tehtävä</button></div>
+  return `<div class="heading"><div><span class="eyebrow">Pieni askel riittää</span><h2>Tehtävät</h2></div><button class="primary" data-add-task>+ Tehtävä</button></div>
     <section class="card"><div class="row spread"><button class="plain" data-month="-1" aria-label="Edellinen kuukausi">←</button><strong>${esc(month.toLocaleDateString("fi-FI", { month: "long", year: "numeric" }))}</strong><button class="plain" data-month="1" aria-label="Seuraava kuukausi">→</button></div><div class="calendar">${weekdays.map(day => `<span class="weekday">${day}</span>`).join("")}${blanks}${days}</div><p class="hint">Vihreällä merkityillä päivillä on tehtäviä.</p></section>
     <div class="heading"><h3>${esc(niceDate(selectedDate))}</h3></div><section class="card">${taskRows(tasksFor(selectedDate), selectedDate)}</section>
     <p class="hint">Lisää kuukausittain vaihtuvat tehtävät itse. Viikkotehtävät toistuvat automaattisesti valittuna viikonpäivänä.</p>`;
@@ -330,8 +352,22 @@ app.addEventListener("change", event => {
   const element = event.target;
   if (element.id === "category-filter") {
     recipeCategory = element.value; render();
+  } else if (element.matches("[data-meal-category]")) {
+    mealCategories[element.dataset.mealCategory] = element.value;
+    render();
   } else if (element.matches("[data-meal]")) {
-    if (element.value) data.meals[element.dataset.meal] = element.value;
+    if (element.value) {
+      const selected = data.recipes.find(recipe => recipe.id === element.value);
+      const week = monday(fromKey(element.dataset.meal));
+      const matches = Array.from({ length: 7 }, (_, index) => dateKey(addDays(week, index)))
+        .filter(date => date !== element.dataset.meal && data.meals[date])
+        .filter(date => {
+          const other = data.recipes.find(recipe => recipe.id === data.meals[date]);
+          return selected && other && (other.id === selected.id || other.name.trim().toLocaleLowerCase("fi-FI") === selected.name.trim().toLocaleLowerCase("fi-FI"));
+        });
+      if (matches.length && !confirm(`Tämä ruoka on jo valittu tälle viikolle: ${matches.map(date => niceDate(date)).join(", ")}.\n\nHaluatko valita sen myös tälle päivälle?`)) { render(); return; }
+      data.meals[element.dataset.meal] = element.value;
+    }
     else delete data.meals[element.dataset.meal];
     saveRender();
   } else if (element.matches("[data-check-shopping]")) {
